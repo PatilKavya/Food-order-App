@@ -2,8 +2,6 @@ import React from "react";
 import HeaderCartButton from "./HeaderCartButton";
 import image from "../../Assets/images/food.img";
 import classes from "./Header.module.css";
-import Summary from "./Summary";
-import Meals from "../Meals/Meals";
 
 const Header = () => {
   
@@ -17,10 +15,7 @@ const Header = () => {
       <div className={classes["main-image"]}>
         <img src={image} alt="meals" />
       </div>
-      <Summary/>
-      <Meals/>
       </div>
-     
     </React.Fragment>
   );
 };

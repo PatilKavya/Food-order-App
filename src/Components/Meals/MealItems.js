@@ -10,13 +10,15 @@ const MealItems=(props)=>{
     return (
         <div className={classes.meal}>
           <li>
+            <div>
            <h3>{props.name}</h3>
-            <p className={classes.description}>{props.details}</p>
-            <p className={classes.price}>{props.price}</p>
+            <div className={classes.description}>{props.details}</div>
+            <div className={classes.price}>{props.price}</div>
+            </div>
             </li>
             <div>
             <Form/>
-            <Button/>
+            <Button>+ Add</Button>
             </div>
         </div>
     )

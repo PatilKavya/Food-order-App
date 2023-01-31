@@ -4,14 +4,14 @@ import classes from './Meals.module.css'
 import Card from '../UI/Card/Card'
 
 const Meals = () => {
-let arr=[{name:'Sushi',details:'Finest fishes and veggies',price:'60 Rs'},
-{name:'Dosa',details:'Breakfast',price:'50 Rs'},
-{name:'Idli',details:'two piece per plate',price:'20 Rs'},
-{name:'Roti',details:'South Indian',price:'30 Rs'}]
+let arr=[{name:'Sushi',details:'Finest fishes and veggies',price:60},
+{name:'Dosa',details:'Breakfast',price:50},
+{name:'Idli',details:'two piece per plate',price:20 },
+{name:'Roti',details:'South Indian',price:30}]
 
 return (
-    <Card class={classes.meals}>
         <div className={classes.meals}>
+             <Card>
             <ul>
         {
             arr.map(item=>{
@@ -22,8 +22,9 @@ return (
             })
         }
         </ul>
+        </Card>
         </div>
-    </Card>
+   
 )
 }
 
