@@ -10,8 +10,8 @@ let arr=[{name:'Sushi',details:'Finest fishes and veggies',price:60},
 {name:'Roti',details:'South Indian',price:30}]
 
 return (
-        <div className={classes.meals}>
-             <Card>
+    <Card>
+        <div className={classes.meals}>       
             <ul>
         {
             arr.map(item=>{
@@ -22,9 +22,8 @@ return (
             })
         }
         </ul>
-        </Card>
         </div>
-   
+        </Card>
 )
 }
 
