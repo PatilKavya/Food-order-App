@@ -1,9 +1,20 @@
-import React from 'react'
+import React,{useContext,useState} from 'react'
+import CartContext from '../../Store/Cart-Context'
 import classes from './MealItems.module.css'
 import Form from '../UI/Form/Form'
-import Button from '../UI/Button/Button'
 
 const MealItems=(props)=>{
+
+    const ctx=useContext(CartContext)
+
+    const[count,setCount]=useState(0)
+
+    const addItemHandler=(event)=>{
+        event.preventDefault();
+        let quantity=document.getElementById(props.id).value;
+       ctx.updateItem({...props.item,quantity:quantity});
+       //ctx.addItem({...props.item,quantity:count})   
+    }
 
 
 
@@ -17,8 +28,8 @@ const MealItems=(props)=>{
             </div>
             </li>
             <div>
-            <Form/>
-            <Button>+ Add</Button>
+            <Form count={count} id={props.id} label='Amount'/>
+            <button className={classes.button} onClick={addItemHandler}>+ Add</button>
             </div>
         </div>
     )
