@@ -11,8 +11,8 @@ const MealItems=(props)=>{
 
     const addItemHandler=(event)=>{
         event.preventDefault();
-        let quantity=document.getElementById(props.id).value;
-       ctx.updateItem({...props.item,quantity:quantity});
+        setCount(count+1)
+       ctx.updateItem({...props.item});
        //ctx.addItem({...props.item,quantity:count})   
     }
 

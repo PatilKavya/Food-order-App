@@ -10,15 +10,24 @@ const [items,setItems]=useState([{name:'Sushi',details:'Finest fishes and veggie
 
 
 const updateQuantity=(item)=>{
-items.forEach(each=>
-   each.name===item.name ? setItems([...items,{...each,quantity:each.quantity++} ]): setItems([...items])
-)  
-
+// items.forEach(each=>
+//   { each.name===item.name ? setItems([...items,{...each,quantity:each.quantity++} ]): setItems([...items])}
+// )  
+const updatedItems=items.map(each=>{
+    return item.name===each.name ? {...item,quantity:each.quantity+1}:{...each}
+})
+console.log(updatedItems)
+setItems(updatedItems)
 }
 console.log(items)
 
-
-const removeItemHandler=id=>{};
+const removeItemHandler=(item)=>{
+    const updatedItems=items.map(each=>{
+        return item.name===each.name ? {...item,quantity:--each.quantity}:{...each}
+    })
+    console.log(updatedItems)
+    setItems(updatedItems)
+};
 
 
 const cartContext={

@@ -1,14 +1,13 @@
-import React,{useContext, useState} from 'react'
+import React from 'react'
 import MealItems from './MealItems'
 import classes from './Meals.module.css'
 import Card from '../UI/Card/Card'
-import CartContext from '../../Store/Cart-Context'
 
 const Meals = () => {
 const arr=[{name:'Sushi',details:'Finest fishes and veggies',price:60,quantity:0},
 {name:'Dosa',details:'Breakfast',price:50,quantity:0},
 {name:'Idli',details:'two piece per plate',price:20,quantity:0 },
-{name:'Roti',details:'South Indian',price:30,quantity:0}]
+{name:'Roti',details:'South Indian',price:30,quantity:0},]
 
 
 return (

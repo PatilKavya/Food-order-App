@@ -2,6 +2,7 @@ import React,{useState,useContext} from 'react'
 import Modal from '../UI/Modal/Modal';
 import classes from './Cart.module.css'
 import CartContext from '../../Store/Cart-Context';
+import CartItem from './CartItem';
 
 
 
@@ -14,9 +15,7 @@ const Cart=(props)=>{
         return curNumber+item.price*item.quantity;
     },0);
 
-const nameList=ct.items.map(item=>item.quantity>1&&<li key={Math.random().toString()}>{item.name}-{item.quantity}-{item.price}</li>)
-  
-
+const items=ct.items.map(item=>item.quantity>0&&<CartItem list={item} key={Math.random().toString()}/>)
 
 const cancelButtonHandler =()=>{
     setCancel(true);
@@ -26,11 +25,11 @@ const cancelButtonHandler =()=>{
     return (
         <Modal>
             <ul>
-           {nameList}
+           {items}
            </ul>
            <div className={classes.total}>
            <span >Total Amount</span>
-           <span>{Amount}</span>
+           <span className={classes.price}>Rs.{Amount}</span>
            </div>
            <div className={classes.actions}>
             <button className={classes['button--alt']} onClick={cancelButtonHandler} >Close</button>
